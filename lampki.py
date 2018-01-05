@@ -106,8 +106,8 @@ def set_all_diodes():
             abort(400)
     for i in range(LED_COUNT):
         strip.setPixelColor(i, Color(
-            *convert_hex_to_color(request.json['color'])))
-    lights[unicode(i)] = lights_dict[unicode(i)]
+            *convert_hex_to_color(lights_dict[unicode(i)])))
+        lights[unicode(i)] = lights_dict[unicode(i)]
     strip.show()
     return 'OK'
 
